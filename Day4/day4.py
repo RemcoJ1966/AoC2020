@@ -15,7 +15,7 @@ def read_passport_data() -> Generator[Dict[str, str], None, None]:
             yield passport_data
             passport_data = {}
 
-        for kv in [[kvs.split(':') for kvs in item.split(',')][0] for item in items]:
+        for kv in [item.split(':') for item in items]:
             passport_data[kv[0]] = kv[1]
 
 def is_valid_passport(items: Dict[str, str]) -> bool:
