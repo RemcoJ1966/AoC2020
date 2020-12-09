@@ -14,8 +14,8 @@ def find_first(numbers: List[int]) -> int:
     i = 0
     for number in numbers:
         if i >= 25:
-            combos = combinations(q, 2)
-            sums = set([x + y for x, y in combos])
+            combos = combinations(set(q), 2)
+            sums = [x + y for x, y in combos]
             if number not in sums:
                 return number
 
